@@ -1,0 +1,44 @@
+THERE IS NO DESIGN! NONE AT ALL!
+
+100x100 grid
+starting with single mageman per player
+hashwords can
+    summon blocks
+    attack
+    heal you
+    other stuff?
+blocks should be mana colored
+take most damage from opposing mana on the mana wheel (2d mana circle thingy, hue-based)
+mana depletion?
+affinity
+word overuse
+scramblewords
+
+need to decide if magemen can walk through lego bricks or not, probably not
+need to decide realtime / turn-based, probably realtime, with casting taking wordlength
+    game_ticks, summoned blocks falling one block/game_tick, game_ticks being about 1 second 
+    maybe longer
+
+need dictionary reader
+[quickly] sort /usr/share/dict/words or some similar file
+toss out anything that isn't all lower (no proper attacks)
+use binary + index search methods to look trhough the dictionary
+store indices of at least first single letters
+
+need rendering system
+simple mana plane, dim, rendered all with legotex
+lego blocks, tops in legotex
+manamen (for now just blocks floating in midair with shadow underneath)
+
+need input system
+hack up oglconsole?
+at least borrow it for font drawing most likely
+
+need network system
+save for later, hotseat play for now (testing only) or just dummy opponent / no opponent
+design for network transparency from start
+
+need spell classes / effects, summon info, etc.
+see SPELLS file
+
+need sleep for now, or at least should.
