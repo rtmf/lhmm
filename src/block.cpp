@@ -1,5 +1,9 @@
 #include <iostream>
-#include <GL/gl.h>
+#ifdef __MACH__
+#  include <OpenGL/gl.h>
+#else
+#  include <GL/gl.h>
+#endif
 #include "block.h"
 #include "grafix.h"
 char * BrickTypes[]={

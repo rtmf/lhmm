@@ -1,8 +1,14 @@
 #include <iostream>
 #include "block.h"
 #include <SDL.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#ifdef __MACH__
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
+#else
+#  include <GL/gl.h>
+#  include <GL/glu.h>
+#endif
+
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>

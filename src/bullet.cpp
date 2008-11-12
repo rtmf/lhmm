@@ -1,6 +1,11 @@
 #include "bullet.h"
-#include <GL/glut.h>
-#include <GL/gl.h>
+#ifdef __MACH__
+#  include <OpenGL/gl.h>
+#  include <GLUT/glut.h>
+#else
+#  include <GL/gl.h>
+#  include <GL/glut.h>
+#endif
 #include <stdlib.h>
 
 Bullet::Bullet(double X, double Y, double Z, double XV, double YV, double ZV, double ZA)
