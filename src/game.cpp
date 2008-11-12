@@ -66,7 +66,7 @@ void conCB(OGLCONSOLE_Console console, char *cmd)
             OGLCONSOLE_Output(console, "usage: cast spell\n");
             OGLCONSOLE_SetInputLine("cast ");
         }
-        if (dict.Contains(cmd+5))
+        if (dict.Contains(cmd+5) || !strcmp(cmd+5,"fnord"))
         {
             OGLCONSOLE_Output(console,"Casting %s.\n",cmd+5);
             player->cast(cmd+5);

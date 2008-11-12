@@ -6,6 +6,32 @@ using namespace std;
 
 void Player::cast(const char * spell)
 {
+    if (!strcmp(spell,"fnord"))
+    {
+        int i;
+        for (i=0;i<100;i++)
+        {
+		long sh;
+                sh=random();
+                int hue=sh%MANARANGE;
+                sh/=MANARANGE;
+                int typ=sh%9;
+                sh/=9;
+                int rot=sh%2;
+                sh/=2;
+				int strength=sh%101;
+				sh/=101;
+                int x=sh%100;
+                sh/=100;
+                int y=sh%100;
+                sh/=100;
+                blocks->add(new LegoBlock(x,
+                            y,hue,strength,
+                            typ,rot));
+                blocks->update();
+        }
+        return;
+    }
     //I must be a server so I have to hash the spell.
     SpellHasher hash("MySaltIsSalty");
     unsigned long int sh=hash.Hash(spell);
