@@ -323,6 +323,12 @@ int clientMain(int argc, char * argv[])
     SDL_GL_SetAttribute( SDL_GL_ACCUM_BLUE_SIZE, 0);
     SDL_GL_SetAttribute( SDL_GL_ACCUM_ALPHA_SIZE, 0);
 
+    {
+        int argc = 1;
+        char cmd[] = "lhmm", *argv[] = {cmd,NULL};
+        glutInit(&argc, argv);
+    }
+
     // Set up our window
     glViewport(0, 0, WIDTH, HEIGHT);
 
