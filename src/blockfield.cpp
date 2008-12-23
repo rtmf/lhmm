@@ -13,15 +13,18 @@ BlockField::BlockField()
 
 void BlockField::update()
 {
+   for (list<LegoBlock *>::const_iterator i = V.begin();i!=V.end();++i) (*i)->getVector()->clear();
     for (list<LegoBlock *>::const_iterator 
             i = V.begin();i!=V.end();++i)
     {
-        (*i)->getVector()->clear();
         for (list<LegoBlock *>::const_iterator 
-                j = V.begin();j!=V.end();++j)
+                j = i;j!=V.end();++j)
         {
             if ((*i)->collideAcross(*(*j)))
+	    {
                 (*i)->getVector()->push_back(*j);
+                (*j)->getVector()->push_back(*i);
+            }
         }
     }
 }
@@ -243,10 +246,12 @@ void BlockField::moveByID(int x, int y, int z, int damage, unsigned long int id)
     {
         if ((*i)->id==id)
         {
+	    int oldx=(*i)->getX();
+	    int oldy=(*i)->getY();
             (*i)->setPosition(x,y);
             (*i)->setZ(z);
             (*i)->setDamage(damage);
-            update();
+            if ((oldx!=x) || (oldy!=y)) update();
             return;
         }
     }
