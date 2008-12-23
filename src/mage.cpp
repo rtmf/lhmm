@@ -228,10 +228,6 @@ void Mage::updateView()
     double Ry = fpos.y + 0.5;
     double Rz = fpos.z;
 
-/*  static double zfag = 0.0;
-    if (zfag != fpos.z)
-    {zfag = fpos.z; std::cout<<"z: " << fpos.z << std::endl;}*/
-
     view.Follow(Rx-cos(ang)*fd,Ry-sin(ang)*fd,Rz+fh,
             Rx,Ry,Rz,
             0,0,1);
