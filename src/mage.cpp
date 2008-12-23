@@ -376,8 +376,6 @@ void Mage::Render()
     glVertex3d(x2,y2,z1);
     glVertex3d(x1,y1,z1);
 
-    // tom you do the rest, and obviously fix the colors...
-
     return;
 
     /*
