@@ -1,0 +1,3 @@
+[submodule "oglconsole"]
+	path = oglconsole
+	url = ./oglconsole

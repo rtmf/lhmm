@@ -397,7 +397,14 @@ int clientMain(int argc, char * argv[])
             player->tryRecv();
         int TS=SDL_GetTicks();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
+				glMatrixMode(GL_PROJECTION);
+				glLoadIdentity();
+				gluPerspective(45.0, GLfloat(WIDTH) / GLfloat(HEIGHT), 0.5, 500.0);
+
+				glMatrixMode(GL_MODELVIEW);
+				glLoadIdentity();
+
+
         player->beginView();
         Render();
         player->endView();

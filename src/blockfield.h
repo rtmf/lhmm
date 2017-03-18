@@ -4,6 +4,8 @@
 #include "block.h"
 #include "bullet.h"
 #include "grafix.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <string>
 class BlockField
 {
